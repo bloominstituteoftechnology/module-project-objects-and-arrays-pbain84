@@ -23,7 +23,8 @@
     // 🧠 Example of usage:
     // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
     function buildPeter() {
-
+      let square = { firstName: 'Peter', lastName: 'Pan', age: 12 };
+      return square;
     }
 
     // 👉 CHALLENGE 2
@@ -31,8 +32,10 @@
     // 🧠 Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
     function buildUser(firstName, lastName, age) {
-
+      let user = { firstName, lastName, age };
+      return user;
     }
+    const user = ('John', 'Smith', 30);
 
     // 👉 CHALLENGE 3
     // 🧠 The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
@@ -42,10 +45,15 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
-
-    }
-
+    function deletePrice(object) {
+    let item1 = {item:'Tesla Model 3', price: 40000}
+    let item2 = {item:'Friends and Family', price: 0}
+    let item3 = {item:'Kobo Libra 2'}
+    delete object.price
+    console.log(object)
+    return object
+   }
+  
     // 👉 CHALLENGE 4
     // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
     // 🧠 Note that the argument of the function is missing, you must write it.
