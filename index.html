@@ -80,7 +80,7 @@
     // 🧠 Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
-    
+
     function firstOrLast(arr, boolean) {
       if (boolean) return arr[0];
       return arr[arr.length - 1];
@@ -92,7 +92,7 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    
+
     function pushElement(arr, elm) {
       arr.push(elm);
       return arr;
@@ -110,8 +110,14 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
 
+    function stripX(strng) {
+      const character = strng.split('');
+      const result = [];
+      for (let i = 0; i < character.length; i++) {
+        if (character[i] !== 'x') result.push(character[i])
+      };
+      return result.join('')
     }
 
     // 👉 CHALLENGE 8
@@ -123,9 +129,17 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
 
+    function stripChar(str, char) {
+      const chars = str.split('');
+      const result = [];
+
+      for (let i = 0; i < chars.length; i++) {
+        if (chars[i] !== char) result.push(chars[i]);
+      }
+      return result.join('');
     }
+
 
     // 👉 CHALLENGE 9
     // 🧠 The function getProps takes an object as its argument.
@@ -136,9 +150,22 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
 
+    function getProps(object) {
+
+      const props = Object.keys(object);
+      const result = [];
+
+      for (let i = 0; i < props.length; i++) {
+        if (props[i] !== 'age' && props[i] !== 'married') {
+          result.push(props[i]);
+        } else return result;
+      }
+
+      return result;
     }
+
+
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
